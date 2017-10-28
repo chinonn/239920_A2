@@ -29,15 +29,15 @@ public class Save implements FileHandler {
             row.createCell(1).setCellValue(headers[i]);
         }
 
-        Row row6 = sheet.createRow(5);
-        row6.createCell(5).setCellValue("java keyword");
+        Row r6 = sheet.createRow(5);
+        r6.createCell(5).setCellValue("java keyword");
 
-        Row row7 = sheet.createRow(6);
-        row7.createCell(0).setCellValue("Matrik");
-        row7.createCell(1).setCellValue("LOC");
-        row7.createCell(2).setCellValue("Blank");
-        row7.createCell(3).setCellValue("Comment");
-        row7.createCell(4).setCellValue("ActualLOC");
+        Row r7 = sheet.createRow(6);
+        r7.createCell(0).setCellValue("Matrik");
+        r7.createCell(1).setCellValue("LOC");
+        r7.createCell(2).setCellValue("Blank");
+        r7.createCell(3).setCellValue("Comment");
+        r7.createCell(4).setCellValue("ActualLOC");
 
         Set<String> usedKeywords = new HashSet<>();
         AssignmentTwo.KEYWORDS.forEach(kw -> informations.forEach(m -> {
@@ -48,10 +48,10 @@ public class Save implements FileHandler {
 
         int currentColumn = 5;
         for (String keyword : usedKeywords) {
-            row7.createCell(currentColumn).setCellValue(keyword);
+            r7.createCell(currentColumn).setCellValue(keyword);
             currentColumn++;
         }
-        
+
         int currentRow = 7;
         for (Information information : informations) {
             Row row = sheet.createRow(currentRow);
@@ -60,7 +60,7 @@ public class Save implements FileHandler {
             row.createCell(2).setCellValue(information.getBlank());
             row.createCell(3).setCellValue(information.getComment());
             row.createCell(4).setCellValue(information.getActual());
-            
+
             currentColumn = 5;
             for (String keyword : usedKeywords) {
                 int count = information.getWordCount().get(keyword);

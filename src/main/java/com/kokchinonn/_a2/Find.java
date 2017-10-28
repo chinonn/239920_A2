@@ -18,7 +18,7 @@ public class Find {
 
     public Find() {
         Collection<File> all = new ArrayList<>();
-        addTree(new File("C://Users//Users//Documents//NetBeansProjects//AssignmentTwo//Assignment2_TestFiles"), all);
+        addTree(new File("C://Users//Users//Documents//NetBeansProjects//239920_A2//Assignment2_TestFiles"), all);
         Collection<File> a = all;
         listJavaFile = filterJava(a);
     }
