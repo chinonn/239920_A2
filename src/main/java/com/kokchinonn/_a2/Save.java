@@ -51,7 +51,7 @@ public class Save implements FileHandler {
             row7.createCell(currentColumn).setCellValue(keyword);
             currentColumn++;
         }
-
+        
         int currentRow = 7;
         for (Information information : informations) {
             Row row = sheet.createRow(currentRow);
@@ -60,7 +60,7 @@ public class Save implements FileHandler {
             row.createCell(2).setCellValue(information.getBlank());
             row.createCell(3).setCellValue(information.getComment());
             row.createCell(4).setCellValue(information.getActual());
-
+            
             currentColumn = 5;
             for (String keyword : usedKeywords) {
                 int count = information.getWordCount().get(keyword);

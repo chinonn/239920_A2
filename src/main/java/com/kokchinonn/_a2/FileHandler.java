@@ -10,5 +10,5 @@ import java.util.List;
 
 public interface FileHandler {
 
-    void storeData(String[] headers, List<Information> informations);
+    void storeData(String[] info, List<Information> informations);
 }

@@ -34,7 +34,7 @@ public class AssignmentTwo {
         final String[] headers = new String[4];
         List<Information> informations = new ArrayList<>();
         FileHandler fileHandler = new Save();
-        
+  
        try (Stream<Path> paths = Files.walk(Paths.get("Assignment2_TestFiles"))) {
             paths.filter(Files::isRegularFile).forEach(path -> {
                 final String[] name = new String[1];
