@@ -8,9 +8,7 @@ package com.kokchinonn._a2;
 
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -38,40 +36,6 @@ public class Save implements FileHandler {
         r7.createCell(2).setCellValue("Blank");
         r7.createCell(3).setCellValue("Comment");
         r7.createCell(4).setCellValue("ActualLOC");
-
-        Set<String> usedKeywords = new HashSet<>();
-        AssignmentTwo.KEYWORDS.forEach(kw -> informations.forEach(m -> {
-            if (m.getWordCount().get(kw) > 0) {
-                usedKeywords.add(kw);
-            }
-        }));
-
-        int currentColumn = 5;
-        for (String keyword : usedKeywords) {
-            r7.createCell(currentColumn).setCellValue(keyword);
-            currentColumn++;
-        }
-
-        int currentRow = 7;
-        for (Information information : informations) {
-            Row row = sheet.createRow(currentRow);
-            row.createCell(0).setCellValue(information.getName());
-            row.createCell(1).setCellValue(information.getLoc());
-            row.createCell(2).setCellValue(information.getBlank());
-            row.createCell(3).setCellValue(information.getComment());
-            row.createCell(4).setCellValue(information.getActual());
-
-            currentColumn = 5;
-            for (String keyword : usedKeywords) {
-                int count = information.getWordCount().get(keyword);
-                if (count > 0) {
-                    row.createCell(currentColumn).setCellValue(count);
-                    currentColumn++;
-                }
-            }
-            row.createCell(currentColumn).setCellValue(information.getTotal());
-            currentRow++;
-        }
 
         try {
             FileOutputStream outputStream = new FileOutputStream("result.xls");
