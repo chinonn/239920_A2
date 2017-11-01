@@ -40,7 +40,7 @@ public class findTest {
     @Test
     public void testAddTree() {
         System.out.println("addTree");
-        File file = new File("C://Users//Users//Documents//NetBeansProjects//AssignmentTwo//Assignment2_TestFiles");
+        File file = new File(System.getProperty("user.dir")+ File.separator + "Assignment2_TestFiles");
         Collection<File> all = new ArrayList<>();
         Find.addTree(file, all);
     }
