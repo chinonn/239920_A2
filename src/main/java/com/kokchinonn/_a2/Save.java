@@ -1,7 +1,7 @@
 //Semester: #A171
 //Course: #STIW3054
 //Group: #A
-//Task: #Assignment1
+//Task: #Assignment2
 //Matrik: #239920
 //Name: #Kok Chin Onn
 package com.kokchinonn._a2;
@@ -18,7 +18,7 @@ public class Save implements FileHandler {
     @Override
     public void storeData(String[] headers, List<Information> informations) {
         XSSFWorkbook workbook = new XSSFWorkbook();
-        XSSFSheet sheet = workbook.createSheet("Java parser");
+        XSSFSheet sheet = workbook.createSheet("Excel");
 
         String[] titles = {"Semester", "Course", "Group", "Task"};
         for (int i = 0; i < headers.length; i++) {
@@ -45,4 +45,4 @@ public class Save implements FileHandler {
         }
         System.out.println("Finished!");
     }   
-}
+ }

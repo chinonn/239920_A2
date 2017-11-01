@@ -1,7 +1,7 @@
 //Semester: #A171
 //Course: #STIW3054
 //Group: #A
-//Task: #Assignment1
+//Task: #Assignment2
 //Matrik: #239920
 //Name: #Kok Chin Onn
 package com.kokchinonn._a2;
@@ -18,7 +18,7 @@ public class Find {
 
     public Find() {
         Collection<File> all = new ArrayList<>();
-        addTree(new File("C://Users//Users//Documents//NetBeansProjects//239920_A2//Assignment2_TestFiles"), all);
+        addTree(new File(System.getProperty("user.dir") + File.separator + "Assignment2_TestFiles"), all);
         Collection<File> a = all;
         listJavaFile = filterJava(a);
     }

@@ -1,12 +1,13 @@
 //Semester: #A171
 //Course: #STIW3054
 //Group: #A
-//Task: #Assignment1
+//Task: #Assignment2
 //Matrik: #239920
 //Name: #Kok Chin Onn
 package com.kokchinonn._a2;
 
 import static com.kokchinonn._a2.AssignmentTwo.KEYWORDS;
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -26,7 +27,7 @@ public class Calculate {
         List<Information> informations = new ArrayList<>();
         FileHandler fileHandler = new Save();
         
-        try (Stream<java.nio.file.Path> paths = Files.walk(Paths.get("Assignment2_TestFiles"))) {
+        try (Stream<java.nio.file.Path> paths = Files.walk(Paths.get(System.getProperty("user.dir")+ File.separator + "Assignment2_TestFiles"))) {
             paths.filter(Files::isRegularFile).forEach(path -> {
                 final String[] name = new String[1];
                 try{

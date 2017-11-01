@@ -1,7 +1,7 @@
 //Semester: #A171
 //Course: #STIW3054
 //Group: #A
-//Task: #Assignment1
+//Task: #Assignment2
 //Matrik: #239920
 //Name: #Kok Chin Onn
 package com.kokchinonn._a2;
